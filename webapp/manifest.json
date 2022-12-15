@@ -1,0 +1,154 @@
+{
+    "_version": "1.21.0",
+    "sap.app": {
+      "_version": "1.1.0",
+      "id": "sap.ui.demo",
+      "type": "application",
+      "i18n": "i18n/i18n.properties",
+      "title": "VOC",
+      "description": "VOC",
+      "applicationVersion": {
+        "version": "1.0.0"
+      },
+      "dataSources": {
+        "myModel_alias": {
+            "uri": "model/Data.json",
+            "type": "JSON"
+        }
+      },
+      "ach": "CA-UI5-DOC"
+    },
+    "sap.ui": {
+      "_version": "1.1.0",
+      "technology": "UI5",
+      "deviceTypes": {
+        "desktop": true,
+        "tablet": true,
+        "phone": true
+      },
+      "supportedThemes": [
+        "sap_bluecrystal"
+      ]
+    },
+    "sap.ui5": {
+      "contentDensities": {"cozy": true,"compact":true},
+      "_version": "1.1.0",
+      "rootView": {
+        "viewName": "sap.ui.demo.view.app",
+        "type": "XML",
+        "id": "app"
+      },
+      "dependencies": {
+        "minUI5Version": "1.98.0",
+        "libs": {
+            "sap.m": {},
+            "sap.ui.core": {},
+            "sap.ui.layout": {},
+            "sap.tnt": {},
+            "sap.suite.ui.microchart": {
+                "lazy": true
+            }
+        }
+      },
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleUrl": "i18n/i18n.properties",
+            "async": true,
+            "fallbackLocale": "en"
+          }
+        },
+        "side": {
+            "type": "sap.ui.model.json.JSONModel",
+            "uri": "model/sideContent.json"
+        },
+        "MockData": {
+          "type": "sap.ui.model.json.JSONModel",
+          "dataSource": "myModel_alias"
+        }   
+      },
+      "routing": {
+        "config": {
+          "routerClass": "sap.m.routing.Router",
+          "viewType": "XML",
+          "viewPath": "sap.ui.demo.view",
+          "controlId": "app",
+          "controlAggregation": "pages"
+        },
+        "routes": [
+          {
+            "name": "login",
+            "target": "login",
+            "pattern": ""
+          },
+          {
+            "name": "base",
+            "target": "base",
+            "pattern": "base"
+          },
+          {
+            "name": "home",
+            "target": "home",
+            "pattern": "home"
+          },
+          {
+            "name": "masterSettings",
+            "target": "masterSettings",
+            "pattern": "masterSettings"
+          },
+          {
+            "name": "addRequest",
+            "target": "addRequest",
+            "pattern": "addRequest"
+          }
+          ,
+          {
+            "name": "vendorPlan",
+            "target": "vendorPlan",
+            "pattern": "vendorPlan"
+          }
+        ],
+        "targets": {
+          "login": {
+            "viewId": "login",
+            "viewName": "login",
+            "viewLevel": 1
+          },
+          "base": {
+            "viewId": "base",
+            "viewName": "base",
+            "viewLevel": 2
+          },
+          "home": {
+            "parent": "base",
+            "viewId": "home",
+            "viewName": "home",
+            "controlId": "pageContainer",
+            "controlAggregation": "pages"
+          },
+          "masterSettings": {
+            "parent": "base",
+            "viewId": "masterSettings",
+            "viewName": "masterSettings",
+            "controlId": "pageContainer",
+            "controlAggregation": "pages"
+          },
+          "addRequest": {
+            "parent": "base",
+            "viewId": "addRequest",
+            "viewName": "pages.addRequest",
+            "controlId": "pageContainer",
+            "controlAggregation": "pages"
+          },
+          "vendorPlan": {
+            "parent": "base",
+            "viewId": "vendorPlan",
+            "viewName": "vendorPlan",
+            "controlId": "pageContainer",
+            "controlAggregation": "pages"
+          }
+        }
+      }
+    }
+  }

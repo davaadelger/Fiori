@@ -1,0 +1,55 @@
+<mvc:View
+	controllerName="sap.ui.demo.controller.vendorPlan"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	height="100%">
+	<Page showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<VBox class="sapUiSmallMargin">
+            <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                <Label text="Төрөл сонгох:" labelFor="idComboBox"/>
+                <ComboBox
+                    id="idComboBox"
+                    items="{MockData>/VendorId}"
+                    change="handleChange">
+                    <core:Item text="{MockData>Text}" key="{MockData>Id}" />
+                </ComboBox>
+            </l:VerticalLayout>
+		</VBox>
+		<ScrollContainer width="100%" vertical="true" focusable="true">
+			<content>
+				<Table
+					fixedLayout="false"
+					growingThreshold="10"
+					id="vendorPlanList"
+					>
+					<!-- <headerToolbar>
+						<Toolbar>
+							<Title id="tableHeader" text="Хүсэлтийн жагсаалт({requestListModel>/requestCount})"/>
+							<ToolbarSpacer/>
+							<SearchField
+								id="searchField"
+								width="auto">
+							</SearchField>
+						</Toolbar>
+					</headerToolbar> -->
+					<!-- <columns> -->
+						<!-- <Column >
+							<ObjectIdentifier title="{Status}" text="{row>Spec}" />
+							<Text text="{MockData>Number}" />
+						</Column> -->
+					<!-- </columns>
+					<ColumnListItem id="test" >
+						<cells>
+							<ObjectIdentifier title="{Status}" text="{/row>Spec}" />
+							<Text text="{/row>itemName}" />
+						</cells>
+					</ColumnListItem> -->
+				</Table>
+			</content>
+		</ScrollContainer>
+	</Page>
+</mvc:View>

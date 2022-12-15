@@ -1,0 +1,120 @@
+<mvc:View
+	controllerName="sap.ui.demo.controller.pages.addRequest"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Page showHeader="true" title="Хүсэлт гаргах">
+        <VBox class="sapUiSmallMargin">
+            <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                <Label text="Төрөл сонгох:" labelFor="idComboBox"/>
+                <ComboBox
+                    id="idComboBox"
+                    items="{MockData>/ReqType}"
+                    change="handleChange">
+                    <core:Item text="{MockData>Text}" key="{MockData>Id}" />
+                </ComboBox>
+            </l:VerticalLayout>
+            <f:Form id="FormToolbar"
+                editable="true"
+                ariaLabelledBy="Title1">
+                <f:layout>
+                    <f:ResponsiveGridLayout
+                        labelSpanXL="4"
+                        labelSpanL="3"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="4"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="2"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="false" />
+                </f:layout>
+                <f:formContainers>
+                    <f:FormContainer ariaLabelledBy="Title2">
+                        <f:formElements>
+                            <f:FormElement label="Зочин">
+                                <Select forceSelection="false" width="100%" id="customer" items="{MockData>/Customer}" selectedKey="Customer" change="onChange">
+                                    <core:Item text="{MockData>Id} - {MockData>Name}" key="{MockData>Id}"/>
+								</Select>
+                            </f:FormElement>
+                            <f:FormElement label="Машин">
+                                <Select forceSelection="false" width="100%" id="car" 
+                                    items="{MockData>/Cars}" selectedKey="Car">
+                                    <core:Item text="{MockData>Name}" key="{MockData>Id}"/>
+								</Select>
+                            </f:FormElement>
+                            <f:FormElement label="Талархлын төрөл">
+                                <Select forceSelection="false" width="100%" id="appreciate" 
+                                    items="{MockData>/Appreciate}" selectedKey="Appreciate">
+                                    <core:Item text="{MockData>Name}" key="{MockData>Id}"/>
+								</Select>
+                            </f:FormElement>
+                            <f:FormElement label="Суваг">
+                                <f:fields>
+                                    <Input value="" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Салбар">
+                                <Select forceSelection="false" width="100%" id="branch" 
+                                    items="{MockData>/Branch}" selectedKey="Branch">
+                                    <core:Item text="{MockData>Name}" key="{MockData>Id}"/>
+								</Select>
+                            </f:FormElement>
+                            <f:FormElement label="Хүсэлт бүртгэсэн ажилтан">
+                                <f:fields>
+                                    <Input value="{i18n>userName}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Бүртгэсэн огноо">
+                                <DatePicker
+                                    id="DP1"
+                                    value="2014-03-26" valueFormat="yyyy-MM-dd" displayFormat="long"
+                                    change="handleChange"
+                                    class="sapUiSmallMarginBottom"/>
+                            </f:FormElement>
+                            <f:FormElement label="Төлөв">
+                                <Select width="100%" id="status" 
+                                    items="{path : 'MockData>/Status',
+                                            filters : [
+                                                    {path : 'Id', operator : 'EQ', value1 : 'S00001'}
+                                                ]
+                                            }" selectedKey="Status">
+                                    <core:Item text="{MockData>Name}" key="{MockData>Id}"/>
+								</Select>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                    <!-- <f:FormContainer ariaLabelledBy="Title3">
+                        <f:toolbar>
+                            <Toolbar>
+                                <Title id="Title3" text="Online"/>
+                                <ToolbarSpacer />
+                                <Button icon="sap-icon://settings"/>
+                            </Toolbar>
+                        </f:toolbar>
+                        <f:formElements>
+                            <f:FormElement label="Web">
+                                <f:fields>
+                                    <Input value="{Url}" type="Url" id="url"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Twitter">
+                                <f:fields>
+                                    <Input value="{Twitter}" id="twitter"/>
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer> -->
+                </f:formContainers>
+            </f:Form>
+        </VBox>
+	</Page>
+</mvc:View>
+
+<!-- filters : [{ path : 'CustId', operator : 'EQ', value1 : ''}]} -->

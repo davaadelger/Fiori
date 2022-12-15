@@ -1,0 +1,43 @@
+<mvc:View 
+    controllerName="sap.ui.demo.controller.login"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    height="100%"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="Нэвтрэх" id="login" showHeader="true">
+     <!-- <Label>daa</Label> -->
+     	<subHeader>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<SegmentedButton selectedKey="Нэвтрэх" selectionChange="onSelectionChange">
+					<items>
+						<SegmentedButtonItem text="Нэвтрэх" key="login" />
+						<SegmentedButtonItem text="Бүртгүүлэх" key="signup"/>
+					</items>
+				</SegmentedButton>
+				<ToolbarSpacer/>
+			</OverflowToolbar>
+		</subHeader>
+        <content>
+            
+            <form:SimpleForm 
+                editable="true" 
+                layout="ResponsiveGridLayout"
+                adjustLabelSpan="false"
+                emptySpanL="4">
+                <Label/>
+                    <!-- <Button text="Нэвтрэх" type="Accept" press="onLogin" width="100%"/>
+                    <Button text="Бүртгүүлэх" type="Accept" press="onSignUp" width="100%"/> -->
+                    <Label text="Нэвтрэх нэр" required="true" vAlign="Middle"></Label>
+                    <Input id="user_id"></Input>
+                    <Label text="Нууц үг" required="true" vAlign="Middle"></Label>
+                    <Input id="user_password" type="Password"></Input>
+                    <Label text="Нууц үг" required="true" vAlign="Middle" visible="false" id="pass1_text"></Label>
+                    <Input id="user_password1" type="Password" visible="false"></Input>
+                    <Label/>
+                    
+                    <Button id="button" text="Нэвтрэх" type="Accept" press="onLoginUser" width="100%"/>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

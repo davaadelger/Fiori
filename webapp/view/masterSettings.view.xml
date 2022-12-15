@@ -1,0 +1,54 @@
+<mvc:View
+	controllerName="sap.ui.demo.controller.masterSettings"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page showHeader="false">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo
+				rootRole="Region"
+				rootLabel="{i18n>Statistics_rootLabel}"
+				contentRole="Main"
+				contentLabel="{i18n>Statistics_contentLabel}"/>
+		</landmarkInfo>
+		<content>
+			<Panel
+				id="statisticsContainer"
+				accessibleRole="Region"
+				class="sapUiNoContentPadding">
+				<headerToolbar>
+					<Toolbar>
+						<Title
+							text="{i18n>shopStatisticsTitle}"
+							level="H3"
+							textAlign="Left"/>
+						<ToolbarSpacer/>
+						<Button
+							id="refresh"
+							icon="sap-icon://refresh"
+							press=".onRefresh"
+							tooltip="{i18n>refreshButtonTooltip}"/>
+					</Toolbar>
+				</headerToolbar>
+                <Table id="productsTable"
+                    items="{MockData>/Set1}"
+                    headerText="Products (Click on an item to set as navigated)">
+                    <columns>
+                        <Column id="status" width="12em"><Text text="Status" /></Column>
+                        <Column id="statusNumber" minScreenWidth="Tablet" demandPopin="true"><Text text="Number" /></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem
+                            type="Active"
+                            vAlign="Middle"
+                            press="onPress">
+                            <cells>
+                                <ObjectIdentifier title="{Status}" text="{MockData>Status}" />
+                                <Text text="{MockData>Number}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

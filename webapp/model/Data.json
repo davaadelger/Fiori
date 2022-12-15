@@ -1,0 +1,111 @@
+{
+    "Set1": [{
+        "Status": "status1",
+        "Number": 10
+    }, {
+        "Status": "status2",
+        "Number": 20
+    }, {
+        "Status": "status3",
+        "Number": 30
+    }, {
+        "Status": "status4",
+        "Number": 40
+    }],
+    "ReqType": [
+        {
+            "Id": 1,
+            "Text": "Талархал"
+        },
+        {
+            "Id": 2,
+            "Text": "Санал"
+        },
+        {
+            "Id": 3,
+            "Text": "Гомдол"
+        }
+    ],
+    "VendorId": [
+        {
+            "Id": 1,
+            "Text": "V900062"
+        },
+        {
+            "Id": 2,
+            "Text": "V200108"
+        },
+        {
+            "Id": 3,
+            "Text": "V200102"
+        }
+    ],
+    "Customer":[
+        {
+            "Id":"C0001",
+            "Name":"davaa1"
+        },
+        {
+            "Id":"C0002",
+            "Name":"davaa2"
+        }
+    ],
+    "Cars":[
+        {
+            "Id":"M0001",
+            "Name":"prius 30",
+            "CustId":"C0001"
+        },
+        {
+            "Id":"M0002",
+            "Name":"prius 20",
+            "CustId":"C0001"
+        },
+        {
+            "Id":"M0003",
+            "Name":"prius 10",
+            "CustId":"C0002"
+        }
+    ],
+    "Appreciate":[
+        {
+            "Id":"A0001",
+            "Name":"Mash ih bayrlalaa"
+        },
+        {
+            "Id":"A0002",
+            "Name":"baga zerg bayrlalaa"
+        },
+        {
+            "Id":"A0003",
+            "Name":"joohn bayrlalaa"
+        }
+    ],
+    "Branch":[
+        {
+            "Id":"FR201",
+            "Name":"Yarmag"
+        },
+        {
+            "Id":"FR203",
+            "Name":"5 shar"
+        },
+        {
+            "Id":"FR205",
+            "Name":"10r khoroolol"
+        }
+    ],
+    "Status":[
+        {
+            "Id":"S00001",
+            "Name":"Явагдаж буй"
+        },
+        {
+            "Id":"S00002",
+            "Name":"Шийдвэрлэсэн"
+        },{
+            "Id":"S00003",
+            "Name":"Цуцалсан"
+        }
+    ]
+}
