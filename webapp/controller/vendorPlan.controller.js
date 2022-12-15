@@ -76,7 +76,6 @@ sap.ui.define([
                         text: obj[k]
                     }));
                 }
-
                 return row;
             });
         }
